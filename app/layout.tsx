@@ -8,7 +8,7 @@ import "./globals.css"
 import SiteChrome from "@/components/baselayout/SiteChrome"
 
 export const metadata: Metadata = {
-  title: "Test Nitro",
+  title: "NitroForge Studio",
   description: "NitroForge Studio is a digital production studio delivering game development, Web3 experiences, software and website solutions, and high-end CGI and visual effects.",
   generator: "v0.app",
   icons: {
