@@ -31,8 +31,8 @@ export default function SiteChrome({ children }: SiteChromeProps) {
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
                 <img
-                  src="/maochi-games-logo.png"
-                  alt="Maochi Games"
+                  src="/company-logo.png"
+                  alt="NitroForge Studio"
                   className="w-[35vw] sm:w-[10vw] md:w-[10vw] lg:w-[10vw] h-auto object-contain"
                 />
               </Link>
