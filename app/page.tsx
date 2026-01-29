@@ -384,7 +384,7 @@ export default function HomePage() {
               // },
               {
                 name: "ROBERTO TAN",
-                title: "Founder / Chief Technology Officer",
+                title: "Founder / Chief Executive Officer",
                 image: "/Team/RobertoTan.jpg",
               },
               {
