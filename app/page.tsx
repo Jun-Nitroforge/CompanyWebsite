@@ -124,7 +124,7 @@ export default function HomePage() {
                  {/* PORTRAIT */}
                  <div className="w-full sm:w-[50sv] md:w-[50sv] lg:w-[100sv] pl-6 sm:pl-10 md:pl-[3vh] lg:pl-[5vh] pr-6 sm:pr-8 md:pr-10 pt-8 sm:pt-0 md:pt-[60vh] lg:pt-[60vh] pb-0 sm:pb-16 mb:pb-16 lg:pb-16 text-left text-white/60 our-company-text">
                      <img
-                         src="/maochi-games-logo.png"
+                         src="/company-logo.png"
                          alt="Maochi Games"
                          className="mb-5 w-[180px] sm:w-[100px] md:w-[338px] h-auto object-contain"
                      />
