@@ -371,16 +371,16 @@ export default function HomePage() {
           {/*<div className="grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-2 md:justify-items-center md:gap-6 lg:grid-cols-4 lg:justify-items-stretch">*/}
           <div className="grid grid-cols-2 justify-items-center gap-4 sm:gap-4 sm:justify-items-center sm:grid-cols-2 md:justify-items-center md:grid-cols-4 md:gap-6 lg:grid-cols-4 lg:justify-items-stretch">
             {[
-              {
-                name: "CECILLE VILLENA",
-                title: "Co-Founder / Chief Executive Officer",
-                image: "/Team/CecilleVillena.png",
-              },
-              {
-                name: "JACKIE VICENTE",
-                title: "Creative Producer / Chief Operations Officer",
-                image: "/Team/JaquelineVicente.png",
-              },
+              // {
+              //   name: "CECILLE VILLENA",
+              //   title: "Co-Founder / Chief Executive Officer",
+              //   image: "/Team/CecilleVillena.png",
+              // },
+              // {
+              //   name: "JACKIE VICENTE",
+              //   title: "Creative Producer / Chief Operations Officer",
+              //   image: "/Team/JaquelineVicente.png",
+              // },
               {
                 name: "ROBERTO TAN",
                 title: "Founder / Chief Technology Officer",
