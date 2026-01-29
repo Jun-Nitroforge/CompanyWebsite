@@ -143,8 +143,8 @@ export default function HomePage() {
                 {/* LANDSCAPE */}
                 <div className="pl-6 sm:pl-10 md:pl-[10vh] lg:pl-[5vh] pr-6 sm:pr-8 md:pr-10 lg:pr-0 pt-8 sm:pt-[80vh] md:pt-[60vh] lg:pt-[60vh] text-left text-white/60 our-company-text">
                     <img
-                        src="/maochi-games-logo.png"
-                        alt="Maochi Games"
+                        src="/company-logo.png"
+                        alt="NitroForge Studio"
                         className="mb-5 w-[180px] sm:w-[150px] md:w-[150px] lg:w-[338px] h-auto object-contain"
                     />
                     <p className="text-[12px] sm:text-[10px] md:text-[12px] lg:text-[22px] leading-relaxed pt-0 sm:pt-0 md:pt-0 lg:pt-0 pb-0 sm:pb-0 md:pb-0 lg:pb-0">
