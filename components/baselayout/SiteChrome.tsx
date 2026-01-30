@@ -265,7 +265,7 @@ export default function SiteChrome({ children }: SiteChromeProps) {
                 <br />
                 Bonifacio Global City, Philippines 1634
               </p>
-              <p className="text-lg text-white/70">jun@nitroforge.studio</p>
+              <p className="text-lg text-white/70">contact@nitroforge.studio</p>
             </div>
           </div>
 
