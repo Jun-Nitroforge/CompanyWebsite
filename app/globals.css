@@ -142,3 +142,23 @@
     width: 18vw;
   }
 }
+
+.site-actions {
+  display: none;
+}
+
+.site-nav-link {
+  font-size: 0.9vw;
+}
+
+@media (max-width: 1024px) {
+  .site-nav-link {
+    font-size: 1.2vw;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-nav-link {
+    font-size: 5vw;
+  }
+}

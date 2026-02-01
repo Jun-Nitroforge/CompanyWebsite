@@ -8,8 +8,8 @@ const _inter = Inter({ subsets: ["latin"] });
 const _oswald = Oswald({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
-  title: 'NEXUS Games | Experience the Future of Gaming',
-  description: 'Discover epic games, join millions of players, and experience the future of interactive entertainment with NEXUS Games.',
+  title: 'NitroForge Studio',
+  description: 'Our studio develops futuristic games that blend creativity, technology, and immersive storytelling.',
   generator: 'v0.app',
   icons: {
     icon: [

@@ -7,10 +7,10 @@ import { Menu, X, Search, User, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
+  { label: "Our Team", href: "#team" },
+  { label: "Services", href: "#services" },
   { label: "Games", href: "#games" },
-  { label: "Latest News", href: "#news" },
   { label: "About", href: "#about" },
-  { label: "Community", href: "#community" },
 ];
 
 export function Navbar() {
@@ -20,7 +20,7 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="w-full px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-22">
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
@@ -34,12 +34,12 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="site-nav-links hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium text-sm uppercase tracking-wider"
+                  className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider"
                 >
                   {link.label}
                 </Link>
@@ -49,7 +49,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-4">
             {/* Desktop Actions */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="site-actions hidden lg:flex items-center gap-4">
               <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
                 <Search className="w-5 h-5" />
                 <span className="sr-only">Search</span>
@@ -87,12 +87,12 @@ export function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium text-sm uppercase tracking-wider py-2"
+                  className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider py-2"
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex items-center gap-4 pt-4 border-t border-border">
+              <div className="site-actions flex items-center gap-4 pt-4 border-t border-border">
                 <Button variant="ghost" size="icon" className="text-muted-foreground">
                   <Search className="w-5 h-5" />
                 </Button>
@@ -103,7 +103,7 @@ export function Navbar() {
                   <User className="w-5 h-5" />
                 </Button>
               </div>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold w-full mt-2">
+              <Button className="site-actions bg-primary text-primary-foreground hover:bg-primary/90 font-semibold w-full mt-2">
                 Sign In
               </Button>
             </div>
