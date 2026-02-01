@@ -1,32 +1,34 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Bai_Jamjuree } from "next/font/google"
-import { GeistMono } from "geist/font/mono"
-import { Analytics } from "@vercel/analytics/next"
-import { Suspense } from "react"
-import "./globals.css"
-import SiteChrome from "@/components/baselayout/SiteChrome"
+import React from "react"
+import type { Metadata } from 'next'
+import { Inter, Oswald } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import './globals.css'
+
+const _inter = Inter({ subsets: ["latin"] });
+const _oswald = Oswald({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
-  title: "NitroForge Studio",
-  description: "NitroForge Studio is a digital production studio delivering game development, Web3 experiences, software and website solutions, and high-end CGI and visual effects.",
-  generator: "v0.app",
+  title: 'NEXUS Games | Experience the Future of Gaming',
+  description: 'Discover epic games, join millions of players, and experience the future of interactive entertainment with NEXUS Games.',
+  generator: 'v0.app',
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      {
+        url: '/icon-light-32x32.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icon-dark-32x32.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    apple: '/apple-icon.png',
   },
 }
-
-const baiJamjuree = Bai_Jamjuree({
-  subsets: ["latin"],
-  weight: ["600"],
-  variable: "--font-bai-jamjuree",
-})
-
-const baiJamjureeRegular = Bai_Jamjuree({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-bai-jamjuree-regular",
-})
 
 export default function RootLayout({
   children,
@@ -35,12 +37,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`font-sans ${baiJamjuree.variable} ${baiJamjureeRegular.variable} ${GeistMono.variable} antialiased`}
-      >
-        <Suspense fallback={null}>
-          <SiteChrome>{children}</SiteChrome>
-        </Suspense>
+      <body className={`font-sans antialiased`}>
+        {children}
         <Analytics />
       </body>
     </html>
