@@ -162,3 +162,19 @@
     font-size: 5vw;
   }
 }
+
+.contact-modal {
+  width: 40vw;
+}
+
+@media (max-width: 768px) {
+  .contact-modal {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .contact-modal {
+    width: 80vw;
+  }
+}

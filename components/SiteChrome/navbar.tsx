@@ -5,6 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Search, User, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const navLinks = [
   { label: "Our Team", href: "#team" },
@@ -19,6 +29,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="w-full px-4 lg:px-8">
+        <Dialog onOpenChange={(open) => open && setIsOpen(false)}>
         <div className="flex items-center justify-between h-16 lg:h-20">
           <div className="flex items-center gap-22">
             {/* Logo */}
@@ -67,6 +78,12 @@ export function Navbar() {
               </Button>
             </div>
 
+            <DialogTrigger asChild>
+              <Button className="bg-green-500 text-white hover:bg-green-600 font-semibold px-6 hidden lg:inline-flex uppercase tracking-wider">
+                Contact Us
+              </Button>
+            </DialogTrigger>
+
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -106,9 +123,46 @@ export function Navbar() {
               <Button className="site-actions bg-primary text-primary-foreground hover:bg-primary/90 font-semibold w-full mt-2">
                 Sign In
               </Button>
+              <DialogTrigger asChild>
+                <Button className="bg-green-500 text-white hover:bg-green-600 font-semibold uppercase tracking-wider w-full">
+                  Contact Us
+                </Button>
+              </DialogTrigger>
             </div>
           </div>
         )}
+        <DialogContent className="contact-modal top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 data-[state=open]:slide-in-from-bottom-10 data-[state=closed]:slide-out-to-bottom-10 data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0">
+          <DialogHeader>
+            <DialogTitle>Contact Us</DialogTitle>
+            <DialogDescription>
+              Tell us a bit about your project and we will get back to you shortly.
+            </DialogDescription>
+          </DialogHeader>
+          <form className="grid gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="contact-name">Name</Label>
+              <Input id="contact-name" name="name" placeholder="Your name" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="contact-email">Email</Label>
+              <Input id="contact-email" name="email" type="email" placeholder="you@example.com" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="contact-message">Message</Label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows={4}
+                placeholder="How can we help?"
+                className="border-input focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] placeholder:text-muted-foreground w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none md:text-sm"
+              />
+            </div>
+            <Button className="bg-green-500 text-white hover:bg-green-600 font-semibold uppercase tracking-wider">
+              Send Message
+            </Button>
+          </form>
+        </DialogContent>
+        </Dialog>
       </nav>
     </header>
   );
