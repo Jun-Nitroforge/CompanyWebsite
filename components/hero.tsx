@@ -20,7 +20,14 @@ export function Hero() {
         {/* Gradient Overlay removed */}
       </div>
 
-      {/* Content hidden */}
+      <div className="absolute bottom-10 left-10 z-10 text-left max-w-xl px-4">
+        <p
+          className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wide uppercase font-bold drop-shadow-[0_4px_16px_rgba(0,0,0,0.65)]"
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+        >
+          Leave it to us, We know the right way forward.
+        </p>
+      </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">

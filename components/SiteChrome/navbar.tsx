@@ -3,8 +3,14 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Search, User, ShoppingCart } from "lucide-react";
+import { Menu, X, Search, User, ShoppingCart, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Dialog,
   DialogContent,
@@ -17,14 +23,23 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 const navLinks = [
-  { label: "Our Team", href: "#team" },
-  { label: "Services", href: "#services" },
   { label: "Games", href: "#games" },
   { label: "About", href: "#about" },
 ];
 
+const servicesLinks = [
+  "UI/UX Creation",
+  "3D Game Asset Creation",
+  "Game Development",
+  "Architectural Visualization with VR",
+  "Application & Web Development",
+  "VFX & CGI Production",
+];
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [formError, setFormError] = useState("");
 
@@ -68,7 +83,7 @@ export function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       <nav className="w-full px-4 lg:px-8">
         <Dialog onOpenChange={(open) => open && setIsOpen(false)}>
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -87,6 +102,32 @@ export function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="site-nav-links hidden lg:flex items-center gap-8">
+              <Link
+                href="#our-team"
+                className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider"
+              >
+                Our Team
+              </Link>
+              <DropdownMenu onOpenChange={setServicesOpen}>
+                <DropdownMenuTrigger asChild>
+                  <button className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider inline-flex items-center gap-1">
+                    Services
+                    {servicesOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-96 py-2">
+                  {servicesLinks.map((label) => (
+                    <DropdownMenuItem key={label} asChild>
+                      <Link
+                        href="#services"
+                        className="w-full text-sm font-medium uppercase tracking-wider py-2 leading-relaxed"
+                      >
+                        {label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
@@ -140,6 +181,37 @@ export function Navbar() {
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
+              <Link
+                href="#our-team"
+                onClick={() => setIsOpen(false)}
+                className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider py-2"
+              >
+                Our Team
+              </Link>
+              <div className="flex flex-col gap-2">
+                <button
+                  className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider inline-flex items-center gap-2 py-2"
+                  onClick={() => setMobileServicesOpen((prev) => !prev)}
+                  type="button"
+                >
+                  Services
+                  {mobileServicesOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                </button>
+                {mobileServicesOpen && (
+                  <div className="flex flex-col gap-2 pl-4">
+                    {servicesLinks.map((label) => (
+                      <Link
+                        key={label}
+                        href="#services"
+                        onClick={() => setIsOpen(false)}
+                        className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider py-1"
+                      >
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
