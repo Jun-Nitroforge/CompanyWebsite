@@ -51,12 +51,17 @@ export async function POST(request: Request) {
       await transporter.verify();
     }
 
+    const cc = process.env.SMTP_CC
+      ? process.env.SMTP_CC.split(",").map((address) => address.trim()).filter(Boolean)
+      : undefined;
+
     await transporter.sendMail({
       from: process.env.SMTP_FROM,
       to: process.env.SMTP_TO,
+      cc,
       replyTo: normalized.email,
-      subject: `New contact form message from ${normalized.name}`,
-      text: `Name: ${normalized.name}\nEmail: ${normalized.email}\n\n${normalized.message}`,
+      subject: `Nitroforge Studio Inquiry from ${normalized.name}`,
+      text: `SENDER NAME: ${normalized.name}\nSENDER EMAIL: ${normalized.email}\n\nSENDER MESSAGE:\n\n${normalized.message}`,
     });
 
     return Response.json({ ok: true });
