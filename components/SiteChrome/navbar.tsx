@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Search, User, ShoppingCart } from "lucide-react";
@@ -25,6 +25,47 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [formError, setFormError] = useState("");
+
+  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setFormStatus("sending");
+    setFormError("");
+
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get("name") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      message: String(formData.get("message") || "").trim(),
+    };
+
+    if (!payload.name || !payload.email || !payload.message) {
+      setFormStatus("error");
+      setFormError("Please complete all required fields.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data?.error || "Unable to send message.");
+      }
+
+      form.reset();
+      setFormStatus("success");
+    } catch (error) {
+      setFormStatus("error");
+      setFormError(error instanceof Error ? error.message : "Unable to send message.");
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -138,14 +179,14 @@ export function Navbar() {
               Tell us a bit about your project and we will get back to you shortly.
             </DialogDescription>
           </DialogHeader>
-          <form className="grid gap-4">
+          <form className="grid gap-4" onSubmit={handleContactSubmit}>
             <div className="grid gap-2">
               <Label htmlFor="contact-name">Name</Label>
-              <Input id="contact-name" name="name" placeholder="Your name" />
+              <Input id="contact-name" name="name" placeholder="Your name" required />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="contact-email">Email</Label>
-              <Input id="contact-email" name="email" type="email" placeholder="you@example.com" />
+              <Input id="contact-email" name="email" type="email" placeholder="you@example.com" required />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="contact-message">Message</Label>
@@ -153,12 +194,22 @@ export function Navbar() {
                 id="contact-message"
                 name="message"
                 rows={4}
-                placeholder="How can we help?"
+                placeholder="Leave a short message. We know the right way forward."
                 className="border-input focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] placeholder:text-muted-foreground w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none md:text-sm"
+                required
               />
             </div>
-            <Button className="bg-green-500 text-white hover:bg-green-600 font-semibold uppercase tracking-wider">
-              Send Message
+            {formStatus !== "idle" && (
+              <p className={`text-sm ${formStatus === "success" ? "text-green-600" : "text-red-600"}`}>
+                {formStatus === "success" ? "Message sent. We will be in touch soon." : formError}
+              </p>
+            )}
+            <Button
+              type="submit"
+              className="bg-green-500 text-white hover:bg-green-600 font-semibold uppercase tracking-wider"
+              disabled={formStatus === "sending"}
+            >
+              {formStatus === "sending" ? "Sending..." : "Send Message"}
             </Button>
           </form>
         </DialogContent>
