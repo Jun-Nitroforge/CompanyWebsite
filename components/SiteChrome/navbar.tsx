@@ -161,7 +161,7 @@ export function Navbar() {
             </div>
 
             <DialogTrigger asChild>
-              <Button className="bg-green-500 text-white hover:bg-green-600 font-semibold px-6 hidden lg:inline-flex uppercase tracking-wider">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-6 hidden lg:inline-flex uppercase tracking-wider">
                 Contact Us
               </Button>
             </DialogTrigger>
@@ -237,7 +237,7 @@ export function Navbar() {
                 Sign In
               </Button>
               <DialogTrigger asChild>
-                <Button className="bg-green-500 text-white hover:bg-green-600 font-semibold uppercase tracking-wider w-full">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold uppercase tracking-wider w-full">
                   Contact Us
                 </Button>
               </DialogTrigger>
@@ -272,13 +272,13 @@ export function Navbar() {
               />
             </div>
             {formStatus !== "idle" && (
-              <p className={`text-sm ${formStatus === "success" ? "text-green-600" : "text-red-600"}`}>
+              <p className={`text-sm ${formStatus === "success" ? "text-primary" : "text-red-600"}`}>
                 {formStatus === "success" ? "Message sent. We will be in touch soon." : formError}
               </p>
             )}
             <Button
               type="submit"
-              className="bg-green-500 text-white hover:bg-green-600 font-semibold uppercase tracking-wider"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold uppercase tracking-wider"
               disabled={formStatus === "sending"}
             >
               {formStatus === "sending" ? "Sending..." : "Send Message"}
