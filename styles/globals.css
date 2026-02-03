@@ -123,3 +123,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+section#games,
+section#news {
+  display: none !important;
+}
