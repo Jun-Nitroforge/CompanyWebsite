@@ -125,6 +125,7 @@
 }
 
 section#games,
-section#news {
+section#news,
+section#community {
   display: none !important;
 }
