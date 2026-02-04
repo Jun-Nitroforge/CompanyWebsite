@@ -24,10 +24,12 @@ export function WeWorkedWith() {
     >
       <div className="mx-auto max-w-6xl">
         <h2
-          className="text-center text-4xl sm:text-5xl font-bold uppercase tracking-wide text-black"
+          className="text-center text-4xl sm:text-5xl font-bold uppercase tracking-wide text-gray-900"
+          // className="text-center text-4xl sm:text-5xl font-bold uppercase tracking-wide text-green-500"            
           style={{ fontFamily: "Montserrat, sans-serif" }}
         >
-          WE&apos;VE WORKED WITH
+          {/*WE&apos;VE WORKED WITH*/}
+          our people have worked with
         </h2>
         <div className="mt-12 grid grid-cols-2 gap-6 place-items-center sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {partners.map((partner) => (

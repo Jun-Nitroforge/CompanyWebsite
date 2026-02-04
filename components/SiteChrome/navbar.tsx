@@ -24,7 +24,7 @@ import { Label } from "@/components/ui/label";
 
 const navLinks = [
   { label: "Games", href: "#games" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "#who-we-are" },
 ];
 
 const servicesLinks = [
