@@ -17,7 +17,10 @@ export function WhoWeAre() {
       />
       <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:gap-16 min-[1500px]:max-w-7x1 min-[1500px]:grid-cols-[minmax(0,340px)_minmax(0,1fr)]">
         <div className="text-center lg:text-left">
-          <h2 className="text-4xl font-bold uppercase tracking-wide sm:text-5xl lg:text-6xl">
+          <h2
+            className="text-4xl font-bold uppercase tracking-wide sm:text-5xl lg:text-6xl"
+            style={{ fontFamily: "var(--font-instrument-sans)" }}
+          >
             <span className="block min-[1500px]:hidden">
               Who We
               <br />

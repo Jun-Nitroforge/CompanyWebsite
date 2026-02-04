@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const works = [
-  { id: "work-1", image: "/images/Games/Game-Velocity.png", href: "" },
+  { id: "work-1", image: "/images/Games/Game-Velocity.png", href: "/works/velocity" },
   // { id: "work-2", image: "/images/Games/Game-Velocity.png", href: "/works/2" },
   // { id: "work-3", image: "/images/Games/Game-Velocity.png", href: "/works/3" },
   // { id: "work-4", image: "/images/Games/Game-Velocity.png", href: "/works/4" },
@@ -17,7 +17,7 @@ export function OurWorks() {
       <div className="px-6 lg:px-12">
         <h2
           className="mb-10 text-center text-4xl sm:text-5xl font-bold uppercase tracking-wide text-black"
-          style={{ fontFamily: "Montserrat, sans-serif" }}
+          style={{ fontFamily: "var(--font-instrument-sans)" }}
         >
           OUR WORKS
         </h2>

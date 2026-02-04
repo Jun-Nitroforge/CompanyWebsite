@@ -26,7 +26,7 @@ export function WeWorkedWith() {
         <h2
           className="text-center text-4xl sm:text-5xl font-bold uppercase tracking-wide text-gray-900"
           // className="text-center text-4xl sm:text-5xl font-bold uppercase tracking-wide text-green-500"            
-          style={{ fontFamily: "Montserrat, sans-serif" }}
+          style={{ fontFamily: "var(--font-instrument-sans)" }}
         >
           {/*WE&apos;VE WORKED WITH*/}
           our people have worked with

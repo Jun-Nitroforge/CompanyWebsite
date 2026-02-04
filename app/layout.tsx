@@ -1,11 +1,13 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Inter, Oswald } from 'next/font/google'
+import { Instrument_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _inter = Inter({ subsets: ["latin"] });
-const _oswald = Oswald({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument-sans",
+});
 
 export const metadata: Metadata = {
   title: 'NitroForge Studio',
@@ -37,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${instrumentSans.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

@@ -4,7 +4,7 @@ export function OurTeam() {
       <div className="mx-auto max-w-5xl text-center">
         <h2
           className="text-5xl sm:text-6xl font-bold uppercase tracking-wide"
-          style={{ fontFamily: "Montserrat, sans-serif" }}
+          style={{ fontFamily: "var(--font-instrument-sans)" }}
         >
           Our Team
         </h2>

@@ -28,7 +28,7 @@ export function OurServices() {
       <div className="mx-auto max-w-7xl">
         <h2
           className="text-center text-4xl sm:text-5xl font-bold uppercase tracking-wide text-black"
-          style={{ fontFamily: "Montserrat, sans-serif" }}
+          style={{ fontFamily: "var(--font-instrument-sans)" }}
         >
           Our Services
         </h2>
