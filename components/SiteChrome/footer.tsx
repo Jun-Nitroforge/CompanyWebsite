@@ -65,9 +65,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-              Creating unforgettable gaming experiences that bring players together from
-              around the world.
-            </p>
+              We create games for the future, driven by innovation and the next era of interactive entertainment.</p>
             {/* Social Links */}
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
@@ -84,96 +82,96 @@ export function Footer() {
           </div>
 
           {/* Games */}
-          <div>
-            <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-4">
-              Games
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.games.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground text-sm hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/*<div>*/}
+          {/*  <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-4">*/}
+          {/*    Games*/}
+          {/*  </h4>*/}
+          {/*  <ul className="space-y-3">*/}
+          {/*    {footerLinks.games.map((link) => (*/}
+          {/*      <li key={link.label}>*/}
+          {/*        <Link*/}
+          {/*          href={link.href}*/}
+          {/*          className="text-muted-foreground text-sm hover:text-foreground transition-colors"*/}
+          {/*        >*/}
+          {/*          {link.label}*/}
+          {/*        </Link>*/}
+          {/*      </li>*/}
+          {/*    ))}*/}
+          {/*  </ul>*/}
+          {/*</div>*/}
 
           {/* Support */}
-          <div>
-            <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-4">
-              Support
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.support.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground text-sm hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/*<div>*/}
+          {/*  <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-4">*/}
+          {/*    Support*/}
+          {/*  </h4>*/}
+          {/*  <ul className="space-y-3">*/}
+          {/*    {footerLinks.support.map((link) => (*/}
+          {/*      <li key={link.label}>*/}
+          {/*        <Link*/}
+          {/*          href={link.href}*/}
+          {/*          className="text-muted-foreground text-sm hover:text-foreground transition-colors"*/}
+          {/*        >*/}
+          {/*          {link.label}*/}
+          {/*        </Link>*/}
+          {/*      </li>*/}
+          {/*    ))}*/}
+          {/*  </ul>*/}
+          {/*</div>*/}
 
           {/* Company */}
-          <div>
-            <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-4">
-              Company
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground text-sm hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/*<div>*/}
+          {/*  <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-4">*/}
+          {/*    Company*/}
+          {/*  </h4>*/}
+          {/*  <ul className="space-y-3">*/}
+          {/*    {footerLinks.company.map((link) => (*/}
+          {/*      <li key={link.label}>*/}
+          {/*        <Link*/}
+          {/*          href={link.href}*/}
+          {/*          className="text-muted-foreground text-sm hover:text-foreground transition-colors"*/}
+          {/*        >*/}
+          {/*          {link.label}*/}
+          {/*        </Link>*/}
+          {/*      </li>*/}
+          {/*    ))}*/}
+          {/*  </ul>*/}
+          {/*</div>*/}
 
           {/* Legal */}
-          <div>
-            <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-4">
-              Legal
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground text-sm hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/*<div>*/}
+          {/*  <h4 className="text-foreground font-semibold text-sm uppercase tracking-wider mb-4">*/}
+          {/*    Legal*/}
+          {/*  </h4>*/}
+          {/*  <ul className="space-y-3">*/}
+          {/*    {footerLinks.legal.map((link) => (*/}
+          {/*      <li key={link.label}>*/}
+          {/*        <Link*/}
+          {/*          href={link.href}*/}
+          {/*          className="text-muted-foreground text-sm hover:text-foreground transition-colors"*/}
+          {/*        >*/}
+          {/*          {link.label}*/}
+          {/*        </Link>*/}
+          {/*      </li>*/}
+          {/*    ))}*/}
+          {/*  </ul>*/}
+          {/*</div>*/}
         </div>
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm">© 2026. All rights reserved.</p>
-          <div className="flex items-center gap-6 text-sm">
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Accessibility
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Site Map
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Cookie Preferences
-            </Link>
-          </div>
+          <p className="text-muted-foreground text-sm">© 2026 Nitro Forge Studio, Inc. All rights reserved.</p>
+          {/*<div className="flex items-center gap-6 text-sm">*/}
+          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">*/}
+          {/*    Accessibility*/}
+          {/*  </Link>*/}
+          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">*/}
+          {/*    Site Map*/}
+          {/*  </Link>*/}
+          {/*  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">*/}
+          {/*    Cookie Preferences*/}
+          {/*  </Link>*/}
+          {/*</div>*/}
         </div>
       </div>
     </footer>
