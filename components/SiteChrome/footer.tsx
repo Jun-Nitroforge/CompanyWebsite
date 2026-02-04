@@ -5,7 +5,7 @@ import {
   Facebook,
   Instagram,
   Youtube,
-  Twitch,
+  Twitch, Linkedin,
 } from "lucide-react";
 
 const footerLinks = {
@@ -40,11 +40,12 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Twitch, href: "#", label: "Twitch" },
+  // { icon: Twitter, href: "#", label: "Twitter" },
+  // { icon: Facebook, href: "#", label: "Facebook" },
+  // { icon: Instagram, href: "#", label: "Instagram" },
+  // { icon: Youtube, href: "#", label: "YouTube" },
+  // { icon: Twitch, href: "#", label: "Twitch" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/nitro-forge-studio-8998a93aa", label: "LinkedIn" },
 ];
 
 export function Footer() {

@@ -4,7 +4,7 @@ import { useState } from "react";
 import {Dialog, DialogContent, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
-const videoUrl = "https://www.youtube.com/embed/AMhcnfOuqow?autoplay=1&rel=0&start=2";
+const videoUrl = "https://www.youtube.com/embed/4Bq05ZU1PiM?autoplay=1&rel=0&start=2";
 
 export default function VelocityPage() {
   const [open, setOpen] = useState(false);
