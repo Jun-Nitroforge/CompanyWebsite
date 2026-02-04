@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero";
 import { OurTeam } from "@/components/our-team";
 import { WhoWeAre } from "@/components/who-we-are";
 import { OurServices } from "@/components/our-services";
+import { WeWorkedWith } from "@/components/we-worked-with";
 import { Footer } from "@/components/SiteChrome/footer";
 
 export default function Home() {
@@ -13,8 +14,8 @@ export default function Home() {
       <OurTeam />
       <WhoWeAre />
       <OurServices />
+      <WeWorkedWith />
       <Footer />
     </main>
   );
 }
-
