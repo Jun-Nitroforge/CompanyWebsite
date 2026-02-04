@@ -88,7 +88,7 @@ export function Navbar() {
             <div className="site-nav-links hidden lg:flex items-center gap-8">
               <Link
                 href="#our-team"
-                className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider"
+                className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider hover:text-green-600"
               >
                 Our Team
               </Link>
@@ -96,7 +96,7 @@ export function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider"
+                  className="site-nav-link text-muted-foreground hover:text-foreground transition-colors font-medium uppercase tracking-wider hover:text-green-600"
                 >
                   {link.label}
                 </Link>
