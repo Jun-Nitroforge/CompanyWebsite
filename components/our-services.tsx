@@ -24,7 +24,7 @@ const serviceCards = [
 
 export function OurServices() {
   return (
-    <section className="bg-white px-6 py-24 lg:px-12">
+    <section id="services" className="bg-white px-6 py-24 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <h2
           className="text-center text-4xl sm:text-5xl font-bold uppercase tracking-wide text-black"

@@ -27,7 +27,7 @@ export function MissionVision() {
           {content.map((item) => (
             <div key={item.title} className="text-left">
               <h2
-                className="text-3xl sm:text-4xl font-bold uppercase tracking-wide text-black"
+                className="text-3xl sm:text-4xl font-bold uppercase tracking-wide text-gray-900"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 {item.title}

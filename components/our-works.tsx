@@ -13,7 +13,7 @@ const works = [
 
 export function OurWorks() {
   return (
-    <section className="bg-white py-20">
+    <section id="games" className="bg-white py-20">
       <div className="px-6 lg:px-12">
         <h2
           className="mb-10 text-center text-4xl sm:text-5xl font-bold uppercase tracking-wide text-black"
